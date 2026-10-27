@@ -1,5 +1,99 @@
 {
-  "version": 1,
+  "version": 2,
+  "capabilities": {
+    "atoms": [
+      {
+        "id": "code.edit",
+        "label": "open, edit and save source files",
+        "synonyms": ["edit", "editing", "source editing", "แก้โค้ด", "เขียนโค้ด"]
+      },
+      {
+        "id": "code.browse",
+        "label": "browse a project tree and open its files",
+        "synonyms": ["browse", "project tree", "file tree", "โฟลเดอร์", "โปรเจกต์"]
+      },
+      {
+        "id": "code.search",
+        "label": "search inside a project's files",
+        "synonyms": ["search", "grep", "find in files", "ค้นหา"]
+      },
+      {
+        "id": "code.format",
+        "label": "format source files",
+        "synonyms": ["format", "formatter", "จัดรูปแบบ"]
+      },
+      {
+        "id": "code.preview",
+        "label": "preview markdown and rendered files",
+        "synonyms": ["preview", "พรีวิว"]
+      },
+      {
+        "id": "terminal.shell",
+        "label": "run real shells on real PTYs",
+        "synonyms": ["terminal", "shell", "pty", "bash", "เทอร์มินัล", "เชลล์"]
+      },
+      {
+        "id": "ui.tabs",
+        "label": "several documents open in tabs",
+        "synonyms": ["tabs", "tabbed", "แท็บ"]
+      },
+      {
+        "id": "ui.sidebar",
+        "label": "a side panel next to the main area",
+        "synonyms": ["sidebar", "side panel", "แถบด้านข้าง"]
+      },
+      {
+        "id": "ui.form",
+        "label": "forms and inputs that take typed values",
+        "synonyms": ["form", "input", "field", "ฟอร์ม", "กรอก"]
+      },
+      {
+        "id": "ui.table",
+        "label": "rows and columns in a table",
+        "synonyms": ["table", "grid", "ตาราง"]
+      },
+      {
+        "id": "ui.chart",
+        "label": "a chart of numbers",
+        "synonyms": ["chart", "graph", "plot", "กราฟ"]
+      },
+      {
+        "id": "ui.image",
+        "label": "show an image",
+        "synonyms": ["image", "picture", "photo", "รูป", "ภาพ"]
+      },
+      {
+        "id": "sheets.grid",
+        "label": "a spreadsheet of cells and formulas",
+        "synonyms": ["spreadsheet", "excel", "cells", "ตารางคำนวณ"]
+      },
+      {
+        "id": "pdf.read",
+        "label": "read a PDF document",
+        "synonyms": ["pdf", "เอกสาร pdf"]
+      },
+      {
+        "id": "backend.process",
+        "label": "a local backend process the screen calls",
+        "synonyms": ["backend", "backend process", "process", "daemon"]
+      },
+      {
+        "id": "data.local-files",
+        "label": "read and write files on this machine",
+        "synonyms": ["files", "local files", "disk", "ไฟล์", "ดิสก์"]
+      },
+      {
+        "id": "data.sqlite",
+        "label": "keep rows in a local SQLite database",
+        "synonyms": ["sqlite", "database", "sql", "ฐานข้อมูล"]
+      },
+      {
+        "id": "notes.markdown",
+        "label": "write and keep markdown notes",
+        "synonyms": ["notes", "markdown", "note taking", "โน้ต", "บันทึก"]
+      }
+    ]
+  },
   "surfaces": [
     {
       "id": "editor",
@@ -7,7 +101,14 @@
       "repo": "zurge-co/ponpoko-surface-editor",
       "ref": "main",
       "description": "A code editor: open a folder, browse it, edit files in tabs, search and format them.",
-      "doors": []
+      "doors": [],
+      "capabilities": ["code.edit", "code.browse", "code.search", "code.format", "code.preview"],
+      "ui": ["ui.tabs", "ui.sidebar"],
+      "backend": ["backend.process"],
+      "data": ["data.local-files"],
+      "license": "NOASSERTION",
+      "maintenance": { "status": "active" },
+      "not_for": ["sheets.grid", "pdf.read"]
     },
     {
       "id": "terminal",
@@ -15,7 +116,14 @@
       "repo": "zurge-co/ponpoko-surface-terminal",
       "ref": "main",
       "description": "A terminal whose tabs are real shells on real PTYs, with Thai at the cell level.",
-      "doors": []
+      "doors": [],
+      "capabilities": ["terminal.shell"],
+      "ui": ["ui.tabs"],
+      "backend": ["backend.process"],
+      "data": ["data.local-files"],
+      "license": "NOASSERTION",
+      "maintenance": { "status": "active" },
+      "not_for": ["code.edit", "code.format"]
     }
   ]
 }
