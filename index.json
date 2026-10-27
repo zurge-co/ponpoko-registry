@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "surfaces": [
+    {
+      "id": "editor",
+      "name": "Editor",
+      "repo": "zurge-co/ponpoko-surface-editor",
+      "ref": "main",
+      "description": "A code editor: open a folder, browse it, edit files in tabs, search and format them.",
+      "doors": []
+    },
+    {
+      "id": "terminal",
+      "name": "Terminal",
+      "repo": "zurge-co/ponpoko-surface-terminal",
+      "ref": "main",
+      "description": "A terminal whose tabs are real shells on real PTYs, with Thai at the cell level.",
+      "doors": []
+    }
+  ]
+}
